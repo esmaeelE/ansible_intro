@@ -14,11 +14,13 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
 
   config.vm.define "host1" do |host1|
-    host1.vm.box = "hashicorp/bionic64"
+    # config.vm.box = "cdsn/debian13"
+    host1.vm.box = "cdsn/debian13"
   end
 
   config.vm.define "host2" do |host2|
-    host2.vm.box = "hashicorp/bionic64"
+    host2.vm.box = "cdsn/debian13"
+    # host2.vm.box = "debian"
   end
 
   # Disable automatic box update checking. If you disable this, then
@@ -36,6 +38,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
   # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  # config.vm.network "forwarded_port", guest: 22, host: 2223, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
